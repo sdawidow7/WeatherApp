@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = SelectCityConfigurator().defaultScene() // Should be handled in more "elegant" way using DI.
+        window?.rootViewController = UINavigationController(rootViewController: SelectCityConfigurator().defaultScene()) // Should be handled in more "elegant" way using DI.
         window?.makeKeyAndVisible()
     }
 
