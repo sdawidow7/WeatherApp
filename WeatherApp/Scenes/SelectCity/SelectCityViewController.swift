@@ -29,6 +29,7 @@ final class SelectCityViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Szukaj miasta" // TODO: Localize
+        searchController.searchBar.searchTextField.delegate = self
 
         navigationItem.searchController = searchController
         navigationItem.title = "Pogoda" // TODO: Localize
@@ -40,3 +41,13 @@ extension SelectCityViewController: UISearchResultsUpdating {
         print("Update") // TODO: Implement
     }
 }
+
+extension SelectCityViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let pattern = "[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]" // TODO: Extract validation
+        guard string != "" else { return true }
+        guard let result = string.range(of: pattern, options: .regularExpression) else { return false }
+        return true
+    }
+}
+
