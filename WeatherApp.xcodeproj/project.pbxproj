@@ -20,6 +20,7 @@
 		103018AB2A7BD3D000FE7BF0 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018AA2A7BD3D000FE7BF0 /* CityModel.swift */; };
 		103018B42A7CEF8100FE7BF0 /* SelectCityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018B32A7CEF8100FE7BF0 /* SelectCityRouter.swift */; };
 		103018B62A7CEF9A00FE7BF0 /* SelectCityUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018B52A7CEF9A00FE7BF0 /* SelectCityUseCase.swift */; };
+		103018B82A7CF22F00FE7BF0 /* CitySearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018B72A7CF22F00FE7BF0 /* CitySearchResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		103018AA2A7BD3D000FE7BF0 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		103018B32A7CEF8100FE7BF0 /* SelectCityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityRouter.swift; sourceTree = "<group>"; };
 		103018B52A7CEF9A00FE7BF0 /* SelectCityUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityUseCase.swift; sourceTree = "<group>"; };
+		103018B72A7CF22F00FE7BF0 /* CitySearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				103018A52A7BBD6900FE7BF0 /* SelectCity */,
+				103018B92A7CF72D00FE7BF0 /* CitySearchResults */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -169,6 +172,14 @@
 				103018A42A7BBD6200FE7BF0 /* Scenes */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		103018B92A7CF72D00FE7BF0 /* CitySearchResults */ = {
+			isa = PBXGroup;
+			children = (
+				103018B72A7CF22F00FE7BF0 /* CitySearchResultsViewController.swift */,
+			);
+			path = CitySearchResults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				103018792A7BBB0100FE7BF0 /* SelectCityViewController.swift in Sources */,
+				103018B82A7CF22F00FE7BF0 /* CitySearchResultsViewController.swift in Sources */,
 				103018752A7BBB0100FE7BF0 /* AppDelegate.swift in Sources */,
 				103018B42A7CEF8100FE7BF0 /* SelectCityRouter.swift in Sources */,
 				103018AB2A7BD3D000FE7BF0 /* CityModel.swift in Sources */,
