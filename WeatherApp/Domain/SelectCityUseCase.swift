@@ -7,7 +7,21 @@ protocol SelectCityUseCase {
 }
 
 final class SelectCityUseCaseImpl: SelectCityUseCase {
-    func searchCities(with name: String) -> AnyPublisher<CitySearchResult, Never> {
-        return Just(.success([.init(cityId: "3123", cityName: "Kraków")])).eraseToAnyPublisher() // TODO: Implement
+
+    private let citySearchRepository: CitySearchRepository
+
+    init(citySearchRepository: CitySearchRepository) {
+        self.citySearchRepository = citySearchRepository
+    }
+
+    func searchCities(with name: String) -> AnyPublisher<Result<[CityModel], Error>, Never> {
+        return Future(asyncFunc: {
+            let cities = try await self.citySearchRepository.searchCities(with: name)
+            return CitySearchResult.success(cities)
+        }).catch({ error in
+            return Just(CitySearchResult.failure(error))
+        })
+        .eraseToAnyPublisher()
+
     }
 }
