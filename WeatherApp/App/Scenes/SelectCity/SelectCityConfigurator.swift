@@ -1,7 +1,9 @@
 final class SelectCityConfigurator {
 
     func defaultScene() -> SelectCityViewController {
-        let viewModel = SelectCityViewModelImpl(useCase: SelectCityUseCaseImpl(), router: SelectCityRouterImpl())
-        return SelectCityViewController(viewModel: viewModel)
+        let useCase = SelectCityUseCaseImpl()
+        let router = SelectCityRouterImpl()
+        let viewModel = SelectCityViewModelImpl(useCase: useCase, router: router)
+        return SelectCityViewController(viewModel: viewModel, citySearchViewController: CitySearchResultsViewController())
     }
 }

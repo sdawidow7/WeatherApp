@@ -1,12 +1,21 @@
 import UIKit
+import Combine
 
 final class SelectCityViewController: UIViewController {
 
     private let viewModel: SelectCityViewModel
-    private lazy var searchController = UISearchController(searchResultsController: nil)
+    private lazy var searchController = UISearchController(searchResultsController: citySearchViewController)
+    private let citySearchViewController: CitySearchResultsViewController
 
-    init(viewModel: SelectCityViewModel) {
+    private let searchSubject: PassthroughSubject<String, Never>
+    private var cancellables: [AnyCancellable] = []
+
+    init(viewModel: SelectCityViewModel,
+         citySearchViewController: CitySearchResultsViewController,
+         searchSubject: PassthroughSubject<String, Never>) {
         self.viewModel = viewModel
+        self.citySearchViewController = citySearchViewController
+        self.searchSubject = searchSubject
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -18,6 +27,7 @@ final class SelectCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
+        bind(to: viewModel)
     }
 
     // MARK: - Private
@@ -34,11 +44,34 @@ final class SelectCityViewController: UIViewController {
         navigationItem.searchController = searchController
         navigationItem.title = "Pogoda" // TODO: Localize
     }
+
+    private func bind(to viewModel: SelectCityViewModel) {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+        let input = SelectCityViewModelInput(searchPublisher: searchSubject.eraseToAnyPublisher(),
+                                             selectionPublisher: citySearchViewController.selectionPublisher)
+
+        let output = viewModel.bind(input: input)
+
+        output.sink(receiveValue: {[unowned self] state in
+            self.render(state)
+        }).store(in: &cancellables)
+    }
+
+    private func render(_ state: SelectCityState) {
+        switch state {
+        case let .success(cities):
+            DispatchQueue.main.async { [weak self] in
+                self?.citySearchViewController.update(with: cities)
+            }
+        case .failure, .initial, .noResults : break // TODO: handle other states
+        }
+    }
 }
 
 extension SelectCityViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print("Update") // TODO: Implement
+        searchSubject.send(searchController.searchBar.text ?? "")
     }
 }
 
@@ -48,5 +81,13 @@ extension SelectCityViewController: UITextFieldDelegate {
         guard string != "" else { return true }
         guard let result = string.range(of: pattern, options: .regularExpression) else { return false }
         return true
+    }
+}
+
+extension SelectCityViewController {
+    convenience init(viewModel: SelectCityViewModel, citySearchViewController: CitySearchResultsViewController) {
+        self.init(viewModel: viewModel,
+                  citySearchViewController: citySearchViewController,
+                  searchSubject: PassthroughSubject<String, Never>())
     }
 }
