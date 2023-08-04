@@ -50,4 +50,3 @@ extension SelectCityViewController: UITextFieldDelegate {
         return true
     }
 }
-

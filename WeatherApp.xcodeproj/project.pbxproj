@@ -17,6 +17,9 @@
 		103018982A7BBB0200FE7BF0 /* WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018972A7BBB0200FE7BF0 /* WeatherAppUITestsLaunchTests.swift */; };
 		103018A72A7BBD8500FE7BF0 /* SelectCityConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018A62A7BBD8500FE7BF0 /* SelectCityConfigurator.swift */; };
 		103018A92A7BBDC400FE7BF0 /* SelectCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018A82A7BBDC400FE7BF0 /* SelectCityViewModel.swift */; };
+		103018AB2A7BD3D000FE7BF0 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018AA2A7BD3D000FE7BF0 /* CityModel.swift */; };
+		103018B42A7CEF8100FE7BF0 /* SelectCityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018B32A7CEF8100FE7BF0 /* SelectCityRouter.swift */; };
+		103018B62A7CEF9A00FE7BF0 /* SelectCityUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018B52A7CEF9A00FE7BF0 /* SelectCityUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		103018972A7BBB0200FE7BF0 /* WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		103018A62A7BBD8500FE7BF0 /* SelectCityConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityConfigurator.swift; sourceTree = "<group>"; };
 		103018A82A7BBDC400FE7BF0 /* SelectCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewModel.swift; sourceTree = "<group>"; };
+		103018AA2A7BD3D000FE7BF0 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		103018B32A7CEF8100FE7BF0 /* SelectCityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityRouter.swift; sourceTree = "<group>"; };
+		103018B52A7CEF9A00FE7BF0 /* SelectCityUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +109,8 @@
 			children = (
 				103018742A7BBB0100FE7BF0 /* AppDelegate.swift */,
 				103018762A7BBB0100FE7BF0 /* SceneDelegate.swift */,
-				103018A42A7BBD6200FE7BF0 /* Scenes */,
+				103018AC2A7BD3D600FE7BF0 /* Domain */,
+				103018AD2A7BD3E100FE7BF0 /* App */,
 				1030187D2A7BBB0200FE7BF0 /* Assets.xcassets */,
 				1030187F2A7BBB0200FE7BF0 /* LaunchScreen.storyboard */,
 				103018822A7BBB0200FE7BF0 /* Info.plist */,
@@ -142,8 +149,26 @@
 				103018A62A7BBD8500FE7BF0 /* SelectCityConfigurator.swift */,
 				103018A82A7BBDC400FE7BF0 /* SelectCityViewModel.swift */,
 				103018782A7BBB0100FE7BF0 /* SelectCityViewController.swift */,
+				103018B32A7CEF8100FE7BF0 /* SelectCityRouter.swift */,
 			);
 			path = SelectCity;
+			sourceTree = "<group>";
+		};
+		103018AC2A7BD3D600FE7BF0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				103018AA2A7BD3D000FE7BF0 /* CityModel.swift */,
+				103018B52A7CEF9A00FE7BF0 /* SelectCityUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		103018AD2A7BD3E100FE7BF0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				103018A42A7BBD6200FE7BF0 /* Scenes */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +303,9 @@
 			files = (
 				103018792A7BBB0100FE7BF0 /* SelectCityViewController.swift in Sources */,
 				103018752A7BBB0100FE7BF0 /* AppDelegate.swift in Sources */,
+				103018B42A7CEF8100FE7BF0 /* SelectCityRouter.swift in Sources */,
+				103018AB2A7BD3D000FE7BF0 /* CityModel.swift in Sources */,
+				103018B62A7CEF9A00FE7BF0 /* SelectCityUseCase.swift in Sources */,
 				103018A92A7BBDC400FE7BF0 /* SelectCityViewModel.swift in Sources */,
 				103018772A7BBB0100FE7BF0 /* SceneDelegate.swift in Sources */,
 				103018A72A7BBD8500FE7BF0 /* SelectCityConfigurator.swift in Sources */,
