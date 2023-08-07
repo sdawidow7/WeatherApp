@@ -3,7 +3,7 @@ import Combine
 
 protocol CitySearchResultsDisplayLogic: UIViewController {
     func update(with list: [CityModel], animated: Bool)
-    var selectionPublisher: AnyPublisher<CityModelId, Never> { get }
+    var selectionPublisher: AnyPublisher<CityModel, Never> { get }
 }
 
 final class CitySearchResultsViewController: UIViewController, CitySearchResultsDisplayLogic {
@@ -13,7 +13,7 @@ final class CitySearchResultsViewController: UIViewController, CitySearchResults
     private lazy var tableView = UITableView()
     private lazy var dataSource: CitySearchDiffableDataSource = makeDataSource()
 
-    private let selectionSubject = PassthroughSubject<CityModelId, Never>()
+    private let selectionSubject = PassthroughSubject<CityModel, Never>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +84,6 @@ extension CitySearchResultsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let snaphot = dataSource.snapshot()
         let selectedItem = snaphot.itemIdentifiers[indexPath.row]
-        selectionSubject.send(selectedItem.cityId)
+        selectionSubject.send(selectedItem)
     }
 }

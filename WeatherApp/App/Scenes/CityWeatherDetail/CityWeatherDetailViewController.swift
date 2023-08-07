@@ -51,10 +51,17 @@ final class CityWeatherDetailViewController: UIViewController {
     private func render(_ state: CityWeatherDetailState) {
         switch state {
         case let .success(currentWeather):
-            print("currentWeather: \(currentWeather)") // TODO: implement
-        case .failure, .loading: // TODO: Handle
+            configureViewSuccess(with: currentWeather)
+        case .failure, .loading: // TODO: Handle other states
             break
         }
+    }
+
+    private func configureViewSuccess(with currentWeather: CityWeatherDetailDisplayModel) {
+        mainView.cityName = currentWeather.cityName
+        mainView.temperatureLabel.text = "\(currentWeather.temperature)°\(currentWeather.temperatureUnit)"
+        mainView.temperatureLabel.textColor = currentWeather.temperatureRange.color
+        mainView.weatherDescription = currentWeather.description
     }
 }
 
@@ -65,9 +72,20 @@ extension CityWeatherDetailViewController {
 }
 
 struct CityWeatherDetailDisplayModel: Equatable {
+    let cityName: String
     let iconId: WeatherIconId
     let temperature: Int
     let temperatureUnit: String
     let temperatureRange: TemperatureRangeModel
     let description: String
+}
+
+extension TemperatureRangeModel {
+    var color: UIColor {
+        switch self {
+        case .cold: return .blue
+        case .normal: return .black
+        case .hot: return .red
+        }
+    }
 }

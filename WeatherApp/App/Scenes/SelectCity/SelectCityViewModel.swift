@@ -60,7 +60,7 @@ final class SelectCityViewModelImpl: SelectCityViewModel {
 
 struct SelectCityViewModelInput {
     let searchPublisher: AnyPublisher<String, Never>
-    let selectionPublisher: AnyPublisher<CityModelId, Never>
+    let selectionPublisher: AnyPublisher<CityModel, Never>
 }
 
 typealias SelectCityViewModelOutput = AnyPublisher<SelectCityState, Never>

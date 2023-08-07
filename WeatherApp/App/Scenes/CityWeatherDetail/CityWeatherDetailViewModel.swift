@@ -7,13 +7,13 @@ protocol CityWeatherDetailViewModel {
 
 final class CityWeatherDetailViewModelImpl: CityWeatherDetailViewModel {
 
-    private let cityModelId: CityModelId
+    private let cityModel: CityModel
     private let useCase: CurrentWeatherUseCase
     private var cancellables: [AnyCancellable] = []
 
-    init(cityModelId: CityModelId,
+    init(cityModel: CityModel,
          useCase: CurrentWeatherUseCase) {
-        self.cityModelId = cityModelId
+        self.cityModel = cityModel
         self.useCase = useCase
     }
 
@@ -23,7 +23,7 @@ final class CityWeatherDetailViewModelImpl: CityWeatherDetailViewModel {
 
         let loadingState = Just<CityWeatherDetailState>(.loading).eraseToAnyPublisher()
 
-        let weather = useCase.currentWeather(for: cityModelId)
+        let weather = useCase.currentWeather(for: cityModel.cityId)
             .map { [unowned self] result -> CityWeatherDetailState in
                 switch result {
                 case let .success(weather):
@@ -41,7 +41,8 @@ final class CityWeatherDetailViewModelImpl: CityWeatherDetailViewModel {
 
     private func displayModel(from model: CurrentWeatherModel) -> CityWeatherDetailDisplayModel {
         let temperature = Int(model.temperature.value)
-        return .init(iconId: model.iconId,
+        return .init(cityName: cityModel.cityName,
+                     iconId: model.iconId,
                      temperature: temperature,
                      temperatureUnit: model.temperature.unit,
                      temperatureRange: .init(temperature),

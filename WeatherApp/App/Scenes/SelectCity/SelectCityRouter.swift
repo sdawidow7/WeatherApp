@@ -1,7 +1,7 @@
 import UIKit
 
 protocol SelectCityRouter {
-    func showCityDetails(for cityId: CityModelId)
+    func showCityDetails(for cityModel: CityModel)
 }
 
 final class SelectCityRouterImpl: SelectCityRouter {
@@ -13,8 +13,8 @@ final class SelectCityRouterImpl: SelectCityRouter {
     }
 
     weak var viewController: UIViewController?
-    func showCityDetails(for cityId: CityModelId) {
-        let weatherDetailViewController = weatherDetailConfigurator.defaultScene(with: cityId)
+    func showCityDetails(for cityModel: CityModel) {
+        let weatherDetailViewController = weatherDetailConfigurator.defaultScene(with: cityModel)
         viewController?.navigationController?.show(weatherDetailViewController, sender: nil)
     }
 }

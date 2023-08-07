@@ -2,6 +2,22 @@ import UIKit
 
 final class CityWeatherDetailView: UIView {
 
+    var cityName: String? {
+        get { headerView.cityLabel.text }
+        set { headerView.cityLabel.text = newValue }
+    }
+
+    var temperatureLabel: UILabel {
+        headerView.temperatureLabel
+    }
+
+    var weatherDescription: String? {
+        get { headerView.descriptionLabel.text }
+        set { headerView.descriptionLabel.text = newValue }
+    }
+
+    private let headerView = WeatherHeaderView()
+
     init() {
         super.init(frame: .zero)
         commonInit()
@@ -21,14 +37,19 @@ final class CityWeatherDetailView: UIView {
     }
 
     func setUpSubviews() {
-        // TODO: Implement
+        addSubview(headerView)
     }
 
     func setUpProperties() {
-        // TODO: Implement
+        backgroundColor = .white
     }
 
     func setUpConstraints() {
-        // TODO: Implement
+        [headerView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        NSLayoutConstraint.activate([
+            headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            headerView.topAnchor.constraint(equalTo: topAnchor)
+        ])
     }
 }
