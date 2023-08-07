@@ -28,6 +28,7 @@
 		103018C52A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C42A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift */; };
 		103018C82A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C72A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift */; };
 		103018CA2A80CEAA00FE7BF0 /* CityWeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */; };
+		103018CC2A80D11D00FE7BF0 /* CityWeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018CB2A80D11D00FE7BF0 /* CityWeatherDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		103018C42A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailViewController.swift; sourceTree = "<group>"; };
 		103018C72A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailConfigurator.swift; sourceTree = "<group>"; };
 		103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailView.swift; sourceTree = "<group>"; };
+		103018CB2A80D11D00FE7BF0 /* CityWeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				103018C72A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift */,
+				103018CB2A80D11D00FE7BF0 /* CityWeatherDetailViewModel.swift */,
 				103018C42A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift */,
 				103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */,
 			);
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103018CC2A80D11D00FE7BF0 /* CityWeatherDetailViewModel.swift in Sources */,
 				103018792A7BBB0100FE7BF0 /* SelectCityViewController.swift in Sources */,
 				103018B82A7CF22F00FE7BF0 /* CitySearchResultsViewController.swift in Sources */,
 				103018C22A7D477500FE7BF0 /* Future+asyncFunc.swift in Sources */,

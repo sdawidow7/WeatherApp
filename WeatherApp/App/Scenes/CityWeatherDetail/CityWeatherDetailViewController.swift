@@ -3,8 +3,10 @@ import UIKit
 final class CityWeatherDetailViewController: UIViewController {
 
     private lazy var mainView = CityWeatherDetailView()
+    private let viewModel: CityWeatherDetailViewModel
 
-    init() {
+    init(viewModel: CityWeatherDetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
