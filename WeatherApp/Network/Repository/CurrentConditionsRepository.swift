@@ -13,7 +13,7 @@ final class CurrentConditionsRepositoryImpl: CurrentConditionsRepository {
         let suffixUrl = "\(currentConditionsUrlString)/\(cityId)?apikey=\(apiKey)&language=\(locale)&details=false" // TODO: Create some builder to create URLs in more elegant way
         guard let url = URL(string: baseUrl + suffixUrl) else { throw URLError.invalidURL }
 
-        let (data, _) = try await URLSession.shared.data(from: url) // TODO: Handle HTTP Errors
+        let (data, _) = try await URLSession.shared.data(from: url) // TODO: Handle HTTP Errors + add some network service
 
         let currentConditions = try JSONDecoder().decode([CurrentConditions].self, from: data)
         guard let currentCondition = currentConditions.first else { throw CurrentConditionsError.emptyResponse }
