@@ -1,8 +1,4 @@
-//
-//  UnitsType.swift
-//  WeatherApp
-//
-//  Created by Szymon Dawidów on 07/08/2023.
-//
-
-import Foundation
+enum UnitsType {
+    case metrics
+    case imperial
+}

@@ -4,7 +4,8 @@ protocol CityWeatherDetailConfigurator {
 
 final class CityWeatherDetailConfiguratorImpl: CityWeatherDetailConfigurator {
     func defaultScene(with cityModelId: CityModelId) -> CityWeatherDetailViewController {
-        let viewModel = CityWeatherDetailViewModelImpl(cityModelId: cityModelId)
+        let useCase = CurrentWeatherUseCaseImpl()
+        let viewModel = CityWeatherDetailViewModelImpl(cityModelId: cityModelId, useCase: useCase)
         return CityWeatherDetailViewController(viewModel: viewModel)
     }
 }

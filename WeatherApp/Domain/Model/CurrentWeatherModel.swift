@@ -1,8 +1,11 @@
-//
-//  CurrentWeatherModel.swift
-//  WeatherApp
-//
-//  Created by Szymon Dawidów on 07/08/2023.
-//
+typealias WeatherIconId = Int
+struct CurrentWeatherModel: Equatable {
+    let iconId: WeatherIconId
+    let description: String
+    let temperature: TemperatureModel
+}
 
-import Foundation
+struct TemperatureModel: Equatable {
+    let value: Double
+    let unit: String
+}
