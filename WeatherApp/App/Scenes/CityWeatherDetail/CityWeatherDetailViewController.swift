@@ -48,10 +48,13 @@ final class CityWeatherDetailViewController: UIViewController {
         }.store(in: &cancellables)
     }
 
+    @MainActor
     private func render(_ state: CityWeatherDetailState) {
         switch state {
         case let .success(currentWeather):
-            configureViewSuccess(with: currentWeather)
+            DispatchQueue.main.async { [weak self] in
+                self?.configureViewSuccess(with: currentWeather)
+            }
         case .failure, .loading: // TODO: Handle other states
             break
         }

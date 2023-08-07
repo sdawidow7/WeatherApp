@@ -8,7 +8,7 @@ final class SelectCityConfigurator {
 
     func defaultScene() -> SelectCityViewController {
         let useCase = SelectCityUseCaseImpl(citySearchRepository: citySearchRepository)
-        let router = SelectCityRouterImpl(weatherDetailConfigurator: CityWeatherDetailConfiguratorImpl())
+        let router = SelectCityRouterImpl(weatherDetailConfigurator: CityWeatherDetailConfiguratorImpl(currentConditionsRepository: CurrentConditionsRepositoryImpl())) // simplification...
         let viewModel = SelectCityViewModelImpl(useCase: useCase, router: router)
 
         let viewController = SelectCityViewController(viewModel: viewModel, citySearchViewController: CitySearchResultsViewController())
