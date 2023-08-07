@@ -29,6 +29,8 @@
 		103018C82A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C72A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift */; };
 		103018CA2A80CEAA00FE7BF0 /* CityWeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */; };
 		103018CC2A80D11D00FE7BF0 /* CityWeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018CB2A80D11D00FE7BF0 /* CityWeatherDetailViewModel.swift */; };
+		103018D02A80E1CD00FE7BF0 /* CurrentConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018CF2A80E1CD00FE7BF0 /* CurrentConditions.swift */; };
+		103018D22A80E50F00FE7BF0 /* CurrentConditionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018D12A80E50F00FE7BF0 /* CurrentConditionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		103018C72A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailConfigurator.swift; sourceTree = "<group>"; };
 		103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailView.swift; sourceTree = "<group>"; };
 		103018CB2A80D11D00FE7BF0 /* CityWeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailViewModel.swift; sourceTree = "<group>"; };
+		103018CF2A80E1CD00FE7BF0 /* CurrentConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditions.swift; sourceTree = "<group>"; };
+		103018D12A80E50F00FE7BF0 /* CurrentConditionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				1030188B2A7BBB0200FE7BF0 /* WeatherAppTests.swift */,
+				103018D32A80ED3100FE7BF0 /* Network */,
 			);
 			path = WeatherAppTests;
 			sourceTree = "<group>";
@@ -205,8 +210,8 @@
 		103018BE2A7D46BF00FE7BF0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				103018BC2A7D46A600FE7BF0 /* CitySearchRepository.swift */,
-				103018BF2A7D46DF00FE7BF0 /* City.swift */,
+				103018CD2A80E0E600FE7BF0 /* Repository */,
+				103018CE2A80E10B00FE7BF0 /* Model */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -228,6 +233,31 @@
 				103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */,
 			);
 			path = CityWeatherDetail;
+			sourceTree = "<group>";
+		};
+		103018CD2A80E0E600FE7BF0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				103018BC2A7D46A600FE7BF0 /* CitySearchRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		103018CE2A80E10B00FE7BF0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				103018BF2A7D46DF00FE7BF0 /* City.swift */,
+				103018CF2A80E1CD00FE7BF0 /* CurrentConditions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		103018D32A80ED3100FE7BF0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				103018D12A80E50F00FE7BF0 /* CurrentConditionsTests.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +407,7 @@
 				103018CA2A80CEAA00FE7BF0 /* CityWeatherDetailView.swift in Sources */,
 				103018772A7BBB0100FE7BF0 /* SceneDelegate.swift in Sources */,
 				103018A72A7BBD8500FE7BF0 /* SelectCityConfigurator.swift in Sources */,
+				103018D02A80E1CD00FE7BF0 /* CurrentConditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1030188C2A7BBB0200FE7BF0 /* WeatherAppTests.swift in Sources */,
+				103018D22A80E50F00FE7BF0 /* CurrentConditionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

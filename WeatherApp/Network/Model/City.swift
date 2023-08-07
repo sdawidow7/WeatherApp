@@ -1,5 +1,3 @@
-import Foundation
-
 typealias CityKey = String
 
 struct City: Codable {
