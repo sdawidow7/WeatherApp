@@ -25,6 +25,9 @@
 		103018BD2A7D46A700FE7BF0 /* CitySearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018BC2A7D46A600FE7BF0 /* CitySearchRepository.swift */; };
 		103018C02A7D46DF00FE7BF0 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018BF2A7D46DF00FE7BF0 /* City.swift */; };
 		103018C22A7D477500FE7BF0 /* Future+asyncFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C12A7D477500FE7BF0 /* Future+asyncFunc.swift */; };
+		103018C52A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C42A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift */; };
+		103018C82A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C72A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift */; };
+		103018CA2A80CEAA00FE7BF0 /* CityWeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		103018BC2A7D46A600FE7BF0 /* CitySearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchRepository.swift; sourceTree = "<group>"; };
 		103018BF2A7D46DF00FE7BF0 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		103018C12A7D477500FE7BF0 /* Future+asyncFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Future+asyncFunc.swift"; sourceTree = "<group>"; };
+		103018C42A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailViewController.swift; sourceTree = "<group>"; };
+		103018C72A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailConfigurator.swift; sourceTree = "<group>"; };
+		103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 		103018A42A7BBD6200FE7BF0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				103018C62A80CDFE00FE7BF0 /* CityWeatherDetail */,
 				103018A52A7BBD6900FE7BF0 /* SelectCity */,
 				103018B92A7CF72D00FE7BF0 /* CitySearchResults */,
 			);
@@ -208,6 +215,16 @@
 				103018C12A7D477500FE7BF0 /* Future+asyncFunc.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		103018C62A80CDFE00FE7BF0 /* CityWeatherDetail */ = {
+			isa = PBXGroup;
+			children = (
+				103018C72A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift */,
+				103018C42A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift */,
+				103018C92A80CEAA00FE7BF0 /* CityWeatherDetailView.swift */,
+			);
+			path = CityWeatherDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +361,7 @@
 				103018B82A7CF22F00FE7BF0 /* CitySearchResultsViewController.swift in Sources */,
 				103018C22A7D477500FE7BF0 /* Future+asyncFunc.swift in Sources */,
 				103018C02A7D46DF00FE7BF0 /* City.swift in Sources */,
+				103018C52A80CDF500FE7BF0 /* CityWeatherDetailViewController.swift in Sources */,
 				103018752A7BBB0100FE7BF0 /* AppDelegate.swift in Sources */,
 				103018B42A7CEF8100FE7BF0 /* SelectCityRouter.swift in Sources */,
 				103018AB2A7BD3D000FE7BF0 /* CityModel.swift in Sources */,
@@ -351,6 +369,8 @@
 				103018B62A7CEF9A00FE7BF0 /* SelectCityUseCase.swift in Sources */,
 				103018BB2A7CF9A600FE7BF0 /* CitySearchCell.swift in Sources */,
 				103018A92A7BBDC400FE7BF0 /* SelectCityViewModel.swift in Sources */,
+				103018C82A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift in Sources */,
+				103018CA2A80CEAA00FE7BF0 /* CityWeatherDetailView.swift in Sources */,
 				103018772A7BBB0100FE7BF0 /* SceneDelegate.swift in Sources */,
 				103018A72A7BBD8500FE7BF0 /* SelectCityConfigurator.swift in Sources */,
 			);
