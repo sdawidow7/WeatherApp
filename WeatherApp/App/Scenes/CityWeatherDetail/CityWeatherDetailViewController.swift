@@ -63,3 +63,11 @@ extension CityWeatherDetailViewController {
         self.init(viewModel: viewModel, appearSubject: .init())
     }
 }
+
+struct CityWeatherDetailDisplayModel: Equatable {
+    let iconId: WeatherIconId
+    let temperature: Int
+    let temperatureUnit: String
+    let temperatureRange: TemperatureRangeModel
+    let description: String
+}
