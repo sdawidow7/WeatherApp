@@ -6,16 +6,19 @@ final class SelectCityViewController: UIViewController {
     private let viewModel: SelectCityViewModel
     private lazy var searchController = UISearchController(searchResultsController: citySearchViewController)
     private let citySearchViewController: CitySearchResultsViewController
+    private let cityInputValidator: CityInputValidator
 
     private let searchSubject: PassthroughSubject<String, Never>
     private var cancellables: [AnyCancellable] = []
 
     init(viewModel: SelectCityViewModel,
          citySearchViewController: CitySearchResultsViewController,
-         searchSubject: PassthroughSubject<String, Never>) {
+         searchSubject: PassthroughSubject<String, Never>,
+         cityInputValidator: CityInputValidator) {
         self.viewModel = viewModel
         self.citySearchViewController = citySearchViewController
         self.searchSubject = searchSubject
+        self.cityInputValidator = cityInputValidator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -77,10 +80,7 @@ extension SelectCityViewController: UISearchResultsUpdating {
 
 extension SelectCityViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let pattern = "[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]" // TODO: Extract validation
-        guard string != "" else { return true }
-        guard let result = string.range(of: pattern, options: .regularExpression) else { return false }
-        return true
+        return cityInputValidator.validate(string)
     }
 }
 
@@ -88,6 +88,7 @@ extension SelectCityViewController {
     convenience init(viewModel: SelectCityViewModel, citySearchViewController: CitySearchResultsViewController) {
         self.init(viewModel: viewModel,
                   citySearchViewController: citySearchViewController,
-                  searchSubject: PassthroughSubject<String, Never>())
+                  searchSubject: PassthroughSubject<String, Never>(),
+                  cityInputValidator: CityInputValidatorImpl())
     }
 }

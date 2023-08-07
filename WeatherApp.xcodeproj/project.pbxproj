@@ -36,6 +36,7 @@
 		103018DB2A80FBE100FE7BF0 /* UnitsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018DA2A80FBE100FE7BF0 /* UnitsType.swift */; };
 		103018DD2A81350C00FE7BF0 /* WeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018DC2A81350C00FE7BF0 /* WeatherHeaderView.swift */; };
 		103018E02A813B9A00FE7BF0 /* CurrentConditionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018DF2A813B9A00FE7BF0 /* CurrentConditionsRepository.swift */; };
+		103018E22A81993200FE7BF0 /* CityInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103018E12A81993200FE7BF0 /* CityInputValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		103018DA2A80FBE100FE7BF0 /* UnitsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsType.swift; sourceTree = "<group>"; };
 		103018DC2A81350C00FE7BF0 /* WeatherHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHeaderView.swift; sourceTree = "<group>"; };
 		103018DF2A813B9A00FE7BF0 /* CurrentConditionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionsRepository.swift; sourceTree = "<group>"; };
+		103018E12A81993200FE7BF0 /* CityInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInputValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				103018A62A7BBD8500FE7BF0 /* SelectCityConfigurator.swift */,
 				103018A82A7BBDC400FE7BF0 /* SelectCityViewModel.swift */,
 				103018782A7BBB0100FE7BF0 /* SelectCityViewController.swift */,
+				103018E12A81993200FE7BF0 /* CityInputValidator.swift */,
 				103018B32A7CEF8100FE7BF0 /* SelectCityRouter.swift */,
 			);
 			path = SelectCity;
@@ -447,6 +450,7 @@
 				103018A92A7BBDC400FE7BF0 /* SelectCityViewModel.swift in Sources */,
 				103018C82A80CE3B00FE7BF0 /* CityWeatherDetailConfigurator.swift in Sources */,
 				103018CA2A80CEAA00FE7BF0 /* CityWeatherDetailView.swift in Sources */,
+				103018E22A81993200FE7BF0 /* CityInputValidator.swift in Sources */,
 				103018772A7BBB0100FE7BF0 /* SceneDelegate.swift in Sources */,
 				103018E02A813B9A00FE7BF0 /* CurrentConditionsRepository.swift in Sources */,
 				103018A72A7BBD8500FE7BF0 /* SelectCityConfigurator.swift in Sources */,
