@@ -16,6 +16,5 @@ final class SelectCityRouterImpl: SelectCityRouter {
     func showCityDetails(for cityId: CityModelId) {
         let weatherDetailViewController = weatherDetailConfigurator.defaultScene(with: cityId)
         viewController?.navigationController?.show(weatherDetailViewController, sender: nil)
-        print("NAVIGATE TO CITY: \(cityId)") // TODO: Implement
     }
 }
